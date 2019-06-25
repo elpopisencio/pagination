@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const PaginationNav = ({ pagesAmount, setCurrentPage, currentPage }) => {
 	const isFirstPage = currentPage === 1;
@@ -9,8 +9,7 @@ const PaginationNav = ({ pagesAmount, setCurrentPage, currentPage }) => {
 			const buttonNumber = index + 1;
 			return (
 				<li key={buttonNumber}>
-					<a
-						href="!#"
+					<button
 						className={
 							'pagination-link ' +
 							(currentPage === buttonNumber && 'is-current')
@@ -19,7 +18,7 @@ const PaginationNav = ({ pagesAmount, setCurrentPage, currentPage }) => {
 						onClick={() => setCurrentPage(buttonNumber)}
 					>
 						{buttonNumber}
-					</a>
+					</button>
 				</li>
 			);
 		});
@@ -29,22 +28,20 @@ const PaginationNav = ({ pagesAmount, setCurrentPage, currentPage }) => {
 			role="navigation"
 			aria-label="pagination"
 		>
-			<a
-				href="!#"
-				className="pagination-previous"
+			<button
+				className="button pagination-previous"
 				disabled={isFirstPage}
 				onClick={() => !isFirstPage && setCurrentPage(currentPage - 1)}
 			>
 				Previous
-			</a>
-			<a
-				href="!#"
-				className="pagination-next"
+			</button>
+			<button
+				className="button pagination-next"
 				disabled={isLastPage}
 				onClick={() => !isLastPage && setCurrentPage(currentPage + 1)}
 			>
 				Next page
-			</a>
+			</button>
 			<ul className="pagination-list">{paginationButtons}</ul>
 		</nav>
 	);
