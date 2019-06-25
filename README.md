@@ -1,3 +1,3 @@
 # Pagination
 
-Pagination example
+A React and Bulma front end pagination example.
