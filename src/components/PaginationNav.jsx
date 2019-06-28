@@ -12,7 +12,7 @@ const PaginationNav = ({ pagesAmount, setCurrentPage, currentPage }) => {
 				<li key={buttonNumber}>
 					<button
 						className={
-							'pagination-link ' +
+							'react-pagination-link ' +
 							(currentPage === buttonNumber && 'react-is-current')
 						}
 						aria-label="Goto page"
