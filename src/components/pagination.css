@@ -24,11 +24,11 @@
 	padding-top: calc(0.375em - 1px);
 	position: relative;
 	vertical-align: top;
+	margin: 0.25rem;
 }
 
 .react-pagination-link {
 	border-color: #dbdbdb;
-	color: #363636;
 	min-width: 2.25em;
 	font-size: 1em;
 	justify-content: center;
@@ -55,4 +55,12 @@
 	background-color: #3273dc;
 	border-color: #3273dc;
 	color: #fff;
+}
+
+.react-icon {
+	align-items: center;
+	display: inline-flex;
+	justify-content: center;
+	height: 1.5rem;
+	width: 1.5rem;
 }

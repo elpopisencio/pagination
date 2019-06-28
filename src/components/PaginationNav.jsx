@@ -30,19 +30,23 @@ const PaginationNav = ({ pagesAmount, setCurrentPage, currentPage }) => {
 			aria-label="pagination"
 		>
 			<button
-				className="react-button"
+				className="react-pagination-link"
 				disabled={isFirstPage}
 				onClick={() => !isFirstPage && setCurrentPage(currentPage - 1)}
 			>
-				Previous
+				<span class="react-icon">
+					<i class="fas fa-chevron-left"></i>
+				</span>
 			</button>
 			<ul className="react-pagination-list">{paginationButtons}</ul>
 			<button
-				className="react-button"
+				className="react-pagination-link"
 				disabled={isLastPage}
 				onClick={() => !isLastPage && setCurrentPage(currentPage + 1)}
 			>
-				Next page
+				<span class="react-icon">
+					<i class="fas fa-chevron-right"></i>
+				</span>
 			</button>
 		</nav>
 	);
