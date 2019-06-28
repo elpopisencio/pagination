@@ -1,4 +1,5 @@
 import React from 'react';
+import './pagination.css';
 
 const PaginationNav = ({ pagesAmount, setCurrentPage, currentPage }) => {
 	const isFirstPage = currentPage === 1;
@@ -12,7 +13,7 @@ const PaginationNav = ({ pagesAmount, setCurrentPage, currentPage }) => {
 					<button
 						className={
 							'pagination-link ' +
-							(currentPage === buttonNumber && 'is-current')
+							(currentPage === buttonNumber && 'react-is-current')
 						}
 						aria-label="Goto page"
 						onClick={() => setCurrentPage(buttonNumber)}
@@ -24,25 +25,25 @@ const PaginationNav = ({ pagesAmount, setCurrentPage, currentPage }) => {
 		});
 	return (
 		<nav
-			className="pagination is-centered"
+			className="react-pagination"
 			role="navigation"
 			aria-label="pagination"
 		>
 			<button
-				className="button pagination-previous"
+				className="react-button"
 				disabled={isFirstPage}
 				onClick={() => !isFirstPage && setCurrentPage(currentPage - 1)}
 			>
 				Previous
 			</button>
+			<ul className="react-pagination-list">{paginationButtons}</ul>
 			<button
-				className="button pagination-next"
+				className="react-button"
 				disabled={isLastPage}
 				onClick={() => !isLastPage && setCurrentPage(currentPage + 1)}
 			>
 				Next page
 			</button>
-			<ul className="pagination-list">{paginationButtons}</ul>
 		</nav>
 	);
 };
