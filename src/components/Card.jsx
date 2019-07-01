@@ -1,7 +1,15 @@
 import React from 'react';
 
 const Card = ({ user }) => (
-	<div className="box">
+	<div
+		className="box"
+		style={{
+			maxWidth: '60vh',
+			display: 'block',
+			marginLeft: 'auto',
+			marginRight: 'auto',
+		}}
+	>
 		<article className="media">
 			<div className="media-left">
 				<figure className="image is-64x64">
@@ -11,12 +19,7 @@ const Card = ({ user }) => (
 			<div className="media-content">
 				<div className="content">
 					<p>
-						<strong>{user.login}</strong> <small>@{user.login}</small>{' '}
-						<small>31m</small>
-						<br />
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Aenean efficitur sit amet massa fringilla egestas. Nullam
-						condimentum luctus turpis.
+						<strong>{user.login}</strong> <small>@{user.login}</small>
 					</p>
 				</div>
 				<nav className="level is-mobile">

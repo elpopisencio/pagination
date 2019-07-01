@@ -18,7 +18,23 @@ const App = () => {
 	}, []);
 	return (
 		<div className="container">
-			<br />
+			<div className="hero">
+				<div className="hero-body">
+					<h1 className="title is-1">Frontend Pagination.</h1>
+					<h2 className="subtitle is-4">Made with React.</h2>
+				</div>
+			</div>
+			<img
+				style={{ height: '10em', display: 'block', margin: 'auto' }}
+				src="https://image.flaticon.com/icons/svg/167/167755.svg"
+				alt=""
+			/>
+			<section className="section">
+				<h3 className="title">Description</h3>
+				<p className="subtitle">
+					In this project I made a frontend pagination wraper with React.
+				</p>
+			</section>
 			<Paginate pageSize={PAGE_SIZE}>
 				{users.map((element) => (
 					<Card user={element} key={element.id} />
