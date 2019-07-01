@@ -13,7 +13,13 @@ const PaginationNav = ({ pagesAmount, setCurrentPage, currentPage }) => {
 					<button
 						className={
 							'react-pagination-link ' +
-							(currentPage === buttonNumber && 'react-is-current')
+							(currentPage === buttonNumber
+								? 'react-is-current'
+								: //buttonNumber !== 1 &&
+								  //buttonNumber !== pagesAmount &&
+								  //buttonNumber !== currentPage + 1 &&
+								  //buttonNumber !== currentPage - 1 &&
+								  'desktop')
 						}
 						aria-label="Goto page"
 						onClick={() => setCurrentPage(buttonNumber)}
@@ -30,7 +36,17 @@ const PaginationNav = ({ pagesAmount, setCurrentPage, currentPage }) => {
 			aria-label="pagination"
 		>
 			<button
-				className="react-pagination-link"
+				className="react-pagination-link "
+				disabled={isFirstPage}
+				onClick={() => setCurrentPage(1)}
+			>
+				<span class="react-icon">
+					<i class="fas fa-chevron-left"></i>
+					<i class="fas fa-chevron-left"></i>
+				</span>
+			</button>
+			<button
+				className="react-pagination-link "
 				disabled={isFirstPage}
 				onClick={() => !isFirstPage && setCurrentPage(currentPage - 1)}
 			>
@@ -38,13 +54,30 @@ const PaginationNav = ({ pagesAmount, setCurrentPage, currentPage }) => {
 					<i class="fas fa-chevron-left"></i>
 				</span>
 			</button>
+			<li className="mobile">
+				<span class="pagination-ellipsis">&hellip;</span>
+			</li>
 			<ul className="react-pagination-list">{paginationButtons}</ul>
+
+			<li className="mobile">
+				<span class="pagination-ellipsis">&hellip;</span>
+			</li>
 			<button
-				className="react-pagination-link"
+				className="react-pagination-link "
 				disabled={isLastPage}
 				onClick={() => !isLastPage && setCurrentPage(currentPage + 1)}
 			>
 				<span class="react-icon">
+					<i class="fas fa-chevron-right"></i>
+				</span>
+			</button>
+			<button
+				className="react-pagination-link "
+				disabled={isLastPage}
+				onClick={() => setCurrentPage(pagesAmount)}
+			>
+				<span class="react-icon">
+					<i class="fas fa-chevron-right"></i>
 					<i class="fas fa-chevron-right"></i>
 				</span>
 			</button>
