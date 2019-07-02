@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Paginate from './components/Paginate';
 import Card from './components/Card';
+import book from './book.svg';
 
 const getUsers = (setUsers) =>
 	axios
@@ -24,11 +25,7 @@ const App = () => {
 					<h2 className="subtitle is-4">Made with React.</h2>
 				</div>
 			</div>
-			<img
-				style={{ height: '10em', display: 'block', margin: 'auto' }}
-				src="https://image.flaticon.com/icons/svg/167/167755.svg"
-				alt=""
-			/>
+			<img className="project-image" src={book} alt="" />
 			<section className="section">
 				<h3 className="title">Description</h3>
 				<p className="subtitle">
